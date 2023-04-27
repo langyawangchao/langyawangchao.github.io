@@ -1,30 +1,38 @@
+@font-face {
+  font-family: 'f';
+  src: url('fonts/gangbiziti.ttf'), url('fonts/gangbiziti.otf'), url('fonts/gangbiziti.woff'), url('fonts/gangbiziti.svg');
+}
 h1 {
   text-align: center;
   color:#191970;
-  font-family:楷体;
+  font-family:f;
+  font-weight:bold
 }
 h2 {
   text-align: center;
   color:#191970;
-  font-family:仿宋;
+  font-family:f;
+  font-weight:bold
 }
 h3 {
   text-align: center;
   color:#191970;
-  font-family:仿宋;
+  font-family:f;
 }
 h4 {
   text-align: center;
   color:#191970;
-  font-family:仿宋;
+  font-family:f;
 }
 a {
   text-align: center;
   color:#191970;
-  font-family:仿宋;
+  font-family:f;
 }
 p {
   text-align: center;
   color:#191970;
-  font-family:仿宋;
+  font-family:f;
 }
+
+
