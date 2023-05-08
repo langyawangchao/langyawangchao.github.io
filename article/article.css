@@ -4,29 +4,26 @@
 }
 body {
 	background: url("article.jpg")
-	font-family:pen;
+
 }
 h1 {
 	text-align: center;
 	font-family:pen;
 }
 h2 {
-	text-align: center;
-	font-family:pen;
+	text-indent: 32px;
+	font-size: 16px;
+	line-height: 32px;
+	font-family:楷体;
 }
 h3 {
 	text-indent: 32px;
 	font-size: 16px;
-	font-family:pen;
+	font-family:楷体;
 }
 h4 {
 	text-indent: 32px;
 	font-size: 16px;
-	font-family:pen;
+	font-family:楷体;
 }
-p {
-	text-indent: 32px;
-	font-size: 16px;
-	line-height: 32px;
-	font-family:pen;
-}
+
