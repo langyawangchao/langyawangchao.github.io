@@ -1,32 +1,32 @@
 @font-face {
-  font-family: 'f';
+  font-family: 'pen';
   src: url('http://langyawangchao.github.io/fonts/gangbiziti.ttf'), url('http://langyawangchao.github.io/fonts/gangbiziti.otf'), url('http://langyawangchao.github.io/fonts/gangbiziti.woff'), url('http://langyawangchao.github.io/fonts/gangbiziti.svg');
 }
 body {
 	background: url("article.jpg")
-	font-family:f;
+	font-family:pen;
 }
 h1 {
 	text-align: center;
-	font-family:f;
+	font-family:pen;
 }
 h2 {
 	text-align: center;
-	font-family:f;
+	font-family:pen;
 }
 h3 {
 	text-indent: 32px;
 	font-size: 16px;
-	font-family:f;
+	font-family:pen;
 }
 h4 {
 	text-indent: 32px;
 	font-size: 16px;
-	font-family:f;
+	font-family:pen;
 }
 p {
 	text-indent: 32px;
 	font-size: 16px;
 	line-height: 32px;
-	font-family:f;
+	font-family:pen;
 }

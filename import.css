@@ -1,38 +1,38 @@
 @font-face {
-  font-family: 'f';
+  font-family: 'pen';
   src: url('fonts/gangbiziti.ttf'), url('fonts/gangbiziti.otf'), url('fonts/gangbiziti.woff'), url('fonts/gangbiziti.svg');
 }
 h1 {
   text-align: center;
   color:#191970;
-  font-family:f;
+  font-family:pen;
   font-weight:bold
 }
 h2 {
   text-align: center;
   color:#191970;
-  font-family:f;
+  font-family:pen;
   font-weight:bold
 }
 h3 {
   text-align: center;
   color:#191970;
-  font-family:f;
+  font-family:pen;
 }
 h4 {
   text-align: center;
   color:#191970;
-  font-family:f;
+  font-family:pen;
 }
 a {
   text-align: center;
   color:#191970;
-  font-family:f;
+  font-family:pen;
 }
 p {
   text-align: center;
   color:#191970;
-  font-family:f;
+  font-family:pen;
 }
 
 
