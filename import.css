@@ -34,5 +34,10 @@ p {
   color:#191970;
   font-family:pen;
 }
-
+a{
+    text-decoration:none;
+    padding:10px 30px;
+    background-color: grey;
+    color: white;
+}
 
