@@ -34,7 +34,7 @@ p {
   color:#191970;
   font-family:pen;
 }
-a{
+.button{
     text-decoration:none;
 
     background-color: grey;
