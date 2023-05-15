@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'pen';
+    src: url('fonts/gangbiziti.ttf'), url('fonts/gangbiziti.otf'), url('fonts/gangbiziti.woff'), url('fonts/gangbiziti.svg');
+}
+h1{ 
+    font-family:pen;
+}
+h2{  
+    font-family:pen;
+}
