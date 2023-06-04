@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>琅琊王朝的实验室</title>
+        <link rel="icon" type="image-x-icon" href="https://langyawangchao.github.io/favitcon.ico">
+        <style>
+            @property --d{
+            syntax: '<angle>';
+            inherits: true;
+            initial-value: 0deg;
+            }
+            button {
+            width: 200px;
+            aspect-ratio:1;
+            font-size:30px;
+            color: #fff;
+            background: none;
+            border: none;
+            border-radius: 20px; 
+            position: relative;
+            z-index: 0;
+            transition: .3s;
+            cursor: pointer;
+            }
+            button:before {
+            content: "";
+            position: absolute;
+            inset: -8px;
+            padding: 8px;
+            border-radius: 28px; 
+            background: conic-gradient(from var(--d,0deg),
+            #21D4FD ,
+                    #0000 30deg 120deg,
+                    #B721FF 150deg 180deg,
+                    #0000 210deg 300deg,
+                    #21D4FD 330deg
+                );
+                -webkit-mask:
+                    linear-gradient(#000 0 0) content-box,
+                    linear-gradient(#000 0 0);
+                -webkit-mask-composite: xor;
+                        mask-composite: intersect
+                }
+                button:after {
+                content: "";
+                position: absolute;
+                inset: -100px;
+                background:
+                    radial-gradient(80px at left  150px top    120px,#21D4FD 98%,#0000),
+                    radial-gradient(80px at right 150px bottom 120px,#B721FF 98%,#0000);
+                filter: blur(60px);
+                opacity: .5;
+                }
+
+                button:before,
+                button:after {
+                transition:.5s, 99999s 99999s transform, 99999s 99999s --d;
+                }
+                button:hover {
+                box-shadow: 0 0 0 1px #666;
+                }
+
+
+                button:hover:after {
+                transform: rotate(3600deg);
+                transition: .5s,60s linear transform;
+                }
+                button:hover:before {
+                --d: 3600deg;
+                transition: .5s,60s linear --d;
+                }
+                button:hover:before {
+                background-color: #222;
+                }
+
+                body {
+                margin: 0;
+                min-height: 100vh;
+                display: grid;
+                place-content: center;
+                grid-auto-flow: column;
+                background-color: #1b1b1c;
+                }
+                *{
+                    /* 初始化 */
+                    margin: 0;
+                    padding: 0;
+                }
+                .btn-box{
+                    width: 500px;
+                    /* 弹性布局 */
+                    display: flex;
+                    /* 横向排列 */
+                    flex-direction: row;
+                    /* 允许换行 */
+                    flex-wrap: wrap;
+                    /* 平均分配宽度 */
+                    justify-content: space-around;
+                }
+                .btn-box .btn{
+                    /* 相对定位 */
+                    position: relative;
+                    width: 200px;
+                    height: 60px;
+                    line-height: 60px;
+                    text-align: center;
+                    color: #00adff;
+                    border: 2px solid #00adff;
+                    font-size: 18px;
+                    margin: 20px 0;
+                    /* 字间距 */
+                    letter-spacing: 4px;
+                    cursor: pointer;
+                    /* 溢出隐藏 */
+                    overflow: hidden;
+                }
+                .btn-box .btn span{
+                    position: relative;
+                    z-index: 1;
+                    /* 动画过渡 */
+                    transition: 1s;
+                }
+                .btn-box .btn .wave{
+                    /* 绝对定位 */
+                    position: absolute;
+                    top: calc(100% + 22px);
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #00adff;
+                    transition: 1s;
+                }
+                .btn-box .btn .wave::before{
+                    content: "";
+                    position: absolute;
+                    top: -22px;
+                    left: 0;
+                    background-image: url("../images/wave.png");
+                    width: 100%;
+                    height: 22px;
+                    /* 执行动画：动画名 时长 线性的 无限次播放 */
+                    animation: animate 0.5s linear infinite;
+                }
+                .btn-box .btn:hover .wave{
+                    top: 0;
+                }
+                .btn-box .btn:hover span{
+                    color: #fff;
+                }
+
+                /* 定义动画 */
+                @keyframes animate {
+                    0%{
+                        background-position-x: 0;
+                        background-position-y: -22px;
+                    }
+                    100%{
+                        background-position-x: 118px;
+                        background-position-y: -22px;
+                    }
+                }
+                .b a{
+                    font-size: 40px;
+                    color: #88bef5;
+                    width: 100px;
+                    height: 100px;
+                    line-height: 100px;
+                    text-align: center;
+                    margin: 0 16px;
+                    display: inline-block;
+                    /* 相对定位 */
+                    position: relative;
+                    /* 动画过渡：时长 线性的 */
+                    transition: 0.5s linear;
+                }
+                .b a::before,.b a::after{
+                    content: "";
+                    /* 绝对定位 */
+                    position: absolute;
+                    /* 这个是告诉浏览器：你想要设置的边框和内边距的值是包含在总宽高内的 */
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    /* 加个动画过渡 */
+                    transition: 0.5s linear;
+                }
+                .b a:hover{
+                    /* 缩小为原来的0.8倍 */
+                    transform: scale(0.8);
+                }
+                .b a:hover::before{
+                    border-left: 4px solid;
+                    border-right: 4px solid;
+                    /* 沿X轴倾斜20度 */
+                    transform: skewX(20deg);
+                }
+                .b a:hover::after{
+                    border-top: 4px solid;
+                    border-bottom: 4px solid;
+                    /* 沿Y轴倾斜-20度 */
+                    transform: skewY(-20deg);
+                }
+        </style>
+    </head>
+    <body>
+        <button>在看的诸位，都是乐色！</button>
+        <div class="btn-box">
+            <div class="btn">
+                <span>哈哈哈</span>
+                <div class="wave"></div>
+            </div>
+            <div class="btn">
+                <span>哈哈哈</span>
+                <div class="wave"></div>
+            </div>
+            <div class="btn">
+                <span>哈哈哈</span>
+                <div class="wave"></div>
+            </div>
+            <div class="btn">
+                <span>哈哈哈</span>
+                <div class="wave"></div>
+            </div>
+        </div>
+        <div class="b">
+        <a href="#"><i class="fa fa-qq" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-wechat" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-renren" aria-hidden="true"></i></a>
+    </div>
+    </body>
+</html>
