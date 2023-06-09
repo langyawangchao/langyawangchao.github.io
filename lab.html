@@ -6,231 +6,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>琅琊王朝的实验室</title>
         <link rel="icon" type="image-x-icon" href="https://langyawangchao.github.io/favitcon.ico">
-
-
+        <link rel="stylesheet" href="import.css" type="text/css">
         <style>
-            @property --d{
-            syntax: '<angle>';
-            inherits: true;
-            initial-value: 0deg;
+            body{
+                background-color: lightgrey;
+                
             }
-            button {
-            width: 200px;
-            aspect-ratio:1;
-            font-size:30px;
-            color: #fff;
-            background: none;
-            border: none;
-            border-radius: 20px; 
-            position: relative;
-            z-index: 0;
-            transition: .3s;
-            cursor: pointer;
+            button{
+                margin: 10px;
+                width: 280px;
+                height: 90px;
+                font-size: 35px;
+                font-weight: bold;
+                background: transparent;
+                border: 1px solid transparent;
+                text-shadow: 1px 1px 0 #808080;
+                overflow: hidden;
+                transition: 0.3s linear 0.15s;
+                border: 2px solid #191970;
             }
-            button:before {
-            content: "";
-            position: absolute;
-            inset: -8px;
-            padding: 8px;
-            border-radius: 28px; 
-            background: conic-gradient(from var(--d,0deg),
-            #21D4FD ,
-                    #0000 30deg 120deg,
-                    #B721FF 150deg 180deg,
-                    #0000 210deg 300deg,
-                    #21D4FD 330deg
-                );
-                -webkit-mask:
-                    linear-gradient(#000 0 0) content-box,
-                    linear-gradient(#000 0 0);
-                -webkit-mask-composite: xor;
-                        mask-composite: intersect
-                }
-                button:after {
-                content: "";
-                position: absolute;
-                inset: -100px;
-                background:
-                    radial-gradient(80px at left  150px top    120px,#21D4FD 98%,#0000),
-                    radial-gradient(80px at right 150px bottom 120px,#B721FF 98%,#0000);
-                filter: blur(60px);
-                opacity: .5;
-                }
-
-                button:before,
-                button:after {
-                transition:.5s, 99999s 99999s transform, 99999s 99999s --d;
-                }
-                button:hover {
-                box-shadow: 0 0 0 1px #666;
-                }
-
-
-                button:hover:after {
-                transform: rotate(3600deg);
-                transition: .5s,60s linear transform;
-                }
-                button:hover:before {
-                --d: 3600deg;
-                transition: .5s,60s linear --d;
-                }
-                button:hover:before {
-                background-color: #222;
-                }
-
-                body {
-                margin: 0;
-                min-height: 100vh;
-                display: grid;
-                place-content: center;
-                grid-auto-flow: column;
-                background-color: #1b1b1c;
-                }
-                *{
-                    /* 初始化 */
-                    margin: 0;
-                    padding: 0;
-                }
-                .btn-box{
-                    width: 500px;
-                    /* 弹性布局 */
-                    display: flex;
-                    /* 横向排列 */
-                    flex-direction: row;
-                    /* 允许换行 */
-                    flex-wrap: wrap;
-                    /* 平均分配宽度 */
-                    justify-content: space-around;
-                }
-                .btn-box .btn{
-                    /* 相对定位 */
-                    position: relative;
-                    width: 200px;
-                    height: 60px;
-                    line-height: 60px;
-                    text-align: center;
-                    color: #00adff;
-                    border: 2px solid #00adff;
-                    font-size: 18px;
-                    margin: 20px 0;
-                    /* 字间距 */
-                    letter-spacing: 4px;
-                    cursor: pointer;
-                    /* 溢出隐藏 */
-                    overflow: hidden;
-                }
-                .btn-box .btn span{
-                    position: relative;
-                    z-index: 1;
-                    /* 动画过渡 */
-                    transition: 1s;
-                }
-                .btn-box .btn .wave{
-                    /* 绝对定位 */
-                    position: absolute;
-                    top: calc(100% + 22px);
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: #00adff;
-                    transition: 1s;
-                }
-                .btn-box .btn .wave::before{
-                    content: "";
-                    position: absolute;
-                    top: -22px;
-                    left: 0;
-                    background-image: url("../images/wave.png");
-                    width: 100%;
-                    height: 22px;
-                    /* 执行动画：动画名 时长 线性的 无限次播放 */
-                    animation: animate 0.5s linear infinite;
-                }
-                .btn-box .btn:hover .wave{
-                    top: 0;
-                }
-                .btn-box .btn:hover span{
-                    color: #fff;
-                }
-
-                /* 定义动画 */
-                @keyframes animate {
-                    0%{
-                        background-position-x: 0;
-                        background-position-y: -22px;
-                    }
-                    100%{
-                        background-position-x: 118px;
-                        background-position-y: -22px;
-                    }
-                }
-                .b a{
-                    font-size: 40px;
-                    color: #88bef5;
-                    width: 100px;
-                    height: 100px;
-                    line-height: 100px;
-                    text-align: center;
-                    margin: 0 16px;
-                    display: inline-block;
-                    /* 相对定位 */
-                    position: relative;
-                    /* 动画过渡：时长 线性的 */
-                    transition: 0.5s linear;
-                }
-                .b a::before,.b a::after{
-                    content: "";
-                    /* 绝对定位 */
-                    position: absolute;
-                    /* 这个是告诉浏览器：你想要设置的边框和内边距的值是包含在总宽高内的 */
-                    box-sizing: border-box;
-                    width: 100%;
-                    height: 100%;
-                    left: 0;
-                    top: 0;
-                    /* 加个动画过渡 */
-                    transition: 0.5s linear;
-                }
-                .b a:hover{
-                    /* 缩小为原来的0.8倍 */
-                    transform: scale(0.8);
-                }
-                .b a:hover::before{
-                    border-left: 4px solid;
-                    border-right: 4px solid;
-                    /* 沿X轴倾斜20度 */
-                    transform: skewX(20deg);
-                }
-                .b a:hover::after{
-                    border-top: 4px solid;
-                    border-bottom: 4px solid;
-                    /* 沿Y轴倾斜-20度 */
-                    transform: skewY(-20deg);
-                }
+            button:hover{
+                color: #fff;
+                text-shadow: 0 0 10px var(--c),
+                0 5px 5px #000;
+                box-shadow: inset 1px 1px 2px #000,
+                inset -1px -1px 2px var(--c);
+            }
+            
         </style>
     </head>
     <body>
-        <button>在看的诸位，都是乐色！</button>
-        <div class="btn-box">
-            <div class="btn">
-                <span class="far fa-hand-middle-finger"></span>
-                <div class="wave"></div>
-            </div>
-            <div class="btn">
-                <span>哈哈哈</span>
-                <div class="wave"></div>
-            </div>
-            <div class="btn">
-                <span>哈哈哈</span>
-                <div class="wave"></div>
-            </div>
-            <div class="btn">
-                <span>哈哈哈</span>
-                <div class="wave"></div>
-            </div>
-        </div>
-        <div class="b">
+        <div align = center>
+            <h1>欢迎来到王朝的主页!</h1>
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 39H44" stroke="#333" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round"/>
+                <path d="M4 27H15.5" stroke="#333" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round"/>
+                <path d="M32.5 27L44 27" stroke="#333" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round"/>
+                <path d="M15.5143 27C15.3799 26.8372 15.25 26.6705 15.125 26.5C15.0052 26.3367 14.8898 26.17 14.7789 26C13.6538 24.2744 13 22.2136 13 20C13 13.9249 17.9249 9 24 9C30.0751 9 35 13.9249 35 20C35 22.2136 34.3462 24.2744 33.2211 26C33.1102 26.17 32.9948 26.3367 32.875 26.5C32.75 26.6705 32.6201 26.8372 32.4857 27" stroke="#333" stroke-width="4" stroke-linecap="butt"/>
+            </svg>
+            <h3>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
+                <iframe src="svg/生肖龙_dragon-zodiac.svg" width="48" height="48" seamless="seamless"></iframe>
 
-    </div>
+            </h3>
+            <p><h4>↑飞龙↑</h4></p>
+            <p><h4>个人信息:</h4></p>
+            <p><h1>略!</h1></p>
+            <p><h4>————分————割————线————</h4></p>
+            <p><h2>注：灰色的方框为按钮，可以点击。</h2></p>
+            <p><h2><button>哔哩哔哩传送门</button></h2></p>
+            <p><h2><button>国象网站传送门</button></h2></p>
+            <p><h2><button>文章收藏传送门</button></h2></p>
+            <p><h2><button>更新日志传送门</button></h2></p>
+            <p><h2><button>游戏盒子传送门</button></h2></p>
+            <p><h2><button>资源仓库传送门</button></h2></p>
+            <p><h2><button>特效列表传送门</button></h2></p>
+            <p><h2><button>音乐列表传送门</button></h2></p>
+            <p><h2><button> 同学录传送门 </button></h2></p>
+            <p><h2><button> 实验室传送门 </button></h2></p>
+
+            <img src="http://langyawangchao.github.io/touxiang.png" alt="王朝的头像">
+        </div>
+        <script>
+            function go(){
+                window.open('https://space.bilibili.com/2033487794/')
+            }
+        </script>
     </body>
 </html>

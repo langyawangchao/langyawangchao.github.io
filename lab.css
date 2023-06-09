@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'pen';
+    src: url('fonts/gangbiziti.ttf'), url('fonts/gangbiziti.otf'), url('fonts/gangbiziti.woff'), url('fonts/gangbiziti.svg');
+  }
+  h1 {
+    text-align: center;
+
+    font-family:pen;
+    font-weight:bold
+  }
+  h2 {
+    text-align: center;
+
+    font-family:pen;
+    font-weight:bold
+  }
+  h3 {
+    text-align: center;
+
+    font-family:pen;
+  }
+  h4 {
+    text-align: center;
+
+    font-family:pen;
+  }
+  a {
+    text-align: center;
+
+    font-family:pen;
+  }
+  p {
+    text-align: center;
+
+    font-family:pen;
+  }
+  .button{
+      text-decoration:none;
+      border: 2px solid #000000;
+      background-color: rgb(151, 151, 151);
+  
+  }
+  iframe{
+    border: medium none;
+  }
+  
+  
